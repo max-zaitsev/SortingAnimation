@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:SortingAnimation.View.Converters">
+
+    <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    <converters:EnumToItemsConverter x:Key="EnumToItemsConverter" />
+
+    <Style x:Key="SortTypeLabelStyle" TargetType="{x:Type TextBlock}">
+        <Style.Triggers>
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=BubbleSort}"
+                Value="True">
+                <Setter Property="Text" Value="Пузырьком" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=CycleSort}"
+                Value="True">
+                <Setter Property="Text" Value="Циклическая" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=GnomeSort}"
+                Value="True">
+                <Setter Property="Text" Value="Гномья" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=HeapSort}"
+                Value="True">
+                <Setter Property="Text" Value="Пирамидальная" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=InsertionSort}"
+                Value="True">
+                <Setter Property="Text" Value="Вставками" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=QuickSort}"
+                Value="True">
+                <Setter Property="Text" Value="Быстрая" />
+            </DataTrigger>
+
+            <DataTrigger
+                Binding="{Binding Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=MergeSort}"
+                Value="True">
+                <Setter Property="Text" Value="Слиянием" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
